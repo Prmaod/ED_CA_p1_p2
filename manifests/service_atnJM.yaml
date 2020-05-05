@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: atnjm
+  labels:
+    app: atn-servicejm
+spec:
+  ports:
+  - port: 9090
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 31917
+  selector:
+    app: atnjm
+  type: NodePort

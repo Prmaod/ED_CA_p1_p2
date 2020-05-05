@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atnjm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: atnjm
+  template:
+    metadata:
+      labels:
+        app: atnjm
+    spec:
+      containers:
+        - name: atnjm
+          image: pramodppr/allthenews:v2
+          args: ["news", "http://nf-service:8888", "weather", "http://wf-service:8888", "door", "http://35.228.237.51:31080"]
+          ports:
+          - containerPort: 8080

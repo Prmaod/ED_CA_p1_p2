@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Front Page</title>
+    <style>
+        .news { color: blue; }
+        .weather { color: red;}
+        .sport { color: green;}
+    </style>
+</head>
+<body>
+    <h1>Hello, I've got some news for you. Just a second...</h1>
+
+    {{.Allnews}}
+
+    <p>Visits: {{.Count}}</p>
+</body>
+</html>
